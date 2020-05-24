@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:image" content="" />
+    <meta name="viewport" content="width=1440">
+    <title>Minesweeper AI</title>
+    <style>
+        :root{
+            --color:265, 57%; /*the base color format(HSL) https://www.google.com/search?q=rgb+to+hex&oq=rgb+to+hex&aqs=chrome..69i57j0l6j69i60.3817j0j7&sourceid=chrome&ie=UTF-8 */
+            --l:57%; /*the initial lightness*/
+            --color-primary: hsl(var(--color),var(--l));
+            --color-primary-darker: hsl(var(--color),calc(var(--l) + 5%));
+            --color-primary-darkest: hsl(var(--color),calc(var(--l) + 10%));
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <script src="https://imlolman.github.io/js/controller.js"></script>
+    <link rel="stylesheet" href="assets/css/milligram.min.css">
+    <link href="assets/css/fa/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+</head>
+<body>
+    <main class="wrapper">
+        <nav class="navigation nav-top">
+            <section class="container">
+                <a class="navigation-title" href="/">
+                    <i class="img fas fa-link"></i>
+                    &nbsp;
+                    <h1 class="title">Minesweeper AI</h1>
+                </a>
+                <ul class="navigation-list float-right">
+                    <li class="navigation-item">
+                        <label class="switch">
+                            <input type="checkbox" id="darkmode" onclick='darkLightToggle()'>
+                            <span class="slider"></span>
+                          </label>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+        <section class="container" id="examples">
+            <h3 class="title">Coming Soon...</h3>
+        </section>
+        <footer class="footer">
+            <section class="container">
+                <p>Designed with ♥ by <a target="_blank" href="https://imlolman.github.io/" title="imlolman">imLolman</a>. Licensed under the <a target="_blank" href="https://github.com/milligram/milligram#license" title="MIT License">MIT License</a>.</p>
+            </section>
+        </footer>
+    </main>
+</body>
+    <script src="assets/js/script.js"></script>
+</html>
