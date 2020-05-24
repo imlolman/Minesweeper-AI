@@ -1,0 +1,97 @@
+.gameBox {
+    background: #000;
+    width: 700px;
+    height: 450px;
+    text-align: center;
+
+    .rules {
+        padding: 50px;
+        font-size: 25px;
+    }
+
+    .gameBTN {
+        background: #eee;
+        color: #000;
+        text-transform: none;
+        outline: none;
+        border: none;
+        border-radius: 2px;
+        font-size: 25px;
+    }
+
+    &.withGame {
+        display: flex;
+        display: none;
+        vertical-align: middle;
+        padding: 15px;
+        align-items: center;
+        text-align: left;
+
+        .sweeperBox {
+            width: 420px;
+            height: 420px;
+            background: #eee;
+            padding: 2px;
+            display: inline-block;
+
+            .cells {
+                height: 50px;
+                margin-top: 2px;
+
+                .cell {
+                    margin: 0px;
+                    padding: 0px;
+                    background: rgb(190, 190, 190);
+                    width: 48px;
+                    height: 48px;
+                    margin-right: 0px;
+                    border-radius: 1px;
+                    padding: 0px;
+                    display: inline-block;
+                    color: #000;
+                    font-weight: 900;
+                    font-size: 25px;
+                    text-align: center;
+                    overflow: hidden;
+                    line-height: 48px;
+
+                    &.flag {
+                        background: url(../images/flag.png);
+                        background-size: contain;
+                        background-position: center;
+                        background-color: rgb(190,190,190);
+                        background-position: 5px 1px;
+                    }
+                    &.mine {
+                        background: url(../images/mine.png);
+                        background-size: contain;
+                        background-position: center;
+                        background-color: rgb(190,190,190);
+                        background-position: 0px 1px;
+                    }
+                }
+            }
+        }
+
+        .buttonBox {
+            display: inline-block;
+            width: 220px;
+            text-align: center;
+
+            .gameBTN {
+                width: 100%;
+                margin-left: 15px;
+            }
+        }
+
+    }
+
+    &.withoutGame {
+        // display: none;
+        padding: 50px;
+
+        .gameBTN {
+            width: 300px;
+        }
+    }
+}

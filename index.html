@@ -21,6 +21,7 @@
     <link href="assets/css/fa/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -50,8 +51,107 @@
                 </ul>
             </section>
         </nav>
-        <section class="container" id="examples">
-            <h3 class="title">Coming Soon...</h3>
+        <section class="container">
+            <div class="row centerthisbox">
+              <div class="gameBox withoutGame">
+                <h1>Play Minesweeper</h1>
+                <div class="rules">
+                    <div>Click a Cell to reveal it.</div>
+                    <div>Right-click or Hold a cell to mark it as mine.</div>
+                    <div>Mark all mines successfully to win.</div>
+                </div>
+                <button class="gameBTN" onclick="runGame()">Play Game</button>
+              </div>
+              <div class="gameBox withGame">
+                <div class="sweeperBox">
+                    <div class="cells">
+                        <div class="cell flag"></div>
+                        <div class="cell mine"></div>
+                        <div class="cell">5</div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="cells">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="cells">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="cells">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="cells">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="cells">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="cells">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="cells">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                </div>
+                <div class="buttonBox">
+                    <button class="gameBTN" onclick="aiMove()">AI Move</button><br>
+                    <button class="gameBTN" onclick="resetGame()">Reset</button>
+                </div>
+              </div>
+            </div>
+          
         </section>
         <footer class="footer">
             <section class="container">
@@ -61,4 +161,5 @@
     </main>
 </body>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/sketch.js"></script>
 </html>
