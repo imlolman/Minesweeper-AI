@@ -280,7 +280,7 @@ class MinesweeperAI():
         
         return self.knowledge
 
-    def give_all_mines(self):
+    def getFlags(self):
         """
         Return all mines found till now
         """

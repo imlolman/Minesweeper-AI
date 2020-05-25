@@ -16,13 +16,13 @@
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-    <script src="https://imlolman.github.io/js/controller.js"></script>
+    <!-- <script src="https://imlolman.github.io/js/controller.js"></script> -->
     <link rel="stylesheet" href="assets/css/milligram.min.css">
     <link href="assets/css/fa/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custom.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
@@ -30,14 +30,14 @@
         }
         gtag('js', new Date());
         gtag('config', '{{ site.google_analytics }}');
-    </script>
+    </script> -->
 </head>
 <body>
     <main class="wrapper">
         <nav class="navigation nav-top">
             <section class="container">
                 <a class="navigation-title" href="/">
-                    <i class="img fas fa-link"></i>
+                    <i class="img fas fa-cannabis"></i>
                     &nbsp;
                     <h1 class="title">Minesweeper AI</h1>
                 </a>
@@ -52,12 +52,13 @@
             </section>
         </nav>
         <section class="container">
+            <h3>Minesweeper AI 🥰</h3><br>
             <div class="row centerthisbox">
               <div class="gameBox withoutGame">
                 <h1>Play Minesweeper</h1>
                 <div class="rules">
                     <div>Click a Cell to reveal it.</div>
-                    <div>Right-click or Hold a cell to mark it as mine.</div>
+                    <div>Right-click a cell to mark it as mine.</div>
                     <div>Mark all mines successfully to win.</div>
                 </div>
                 <button class="gameBTN" onclick="runGame()">Play Game</button>
@@ -65,89 +66,91 @@
               <div class="gameBox withGame">
                 <div class="sweeperBox">
                     <div class="cells">
-                        <div class="cell flag"></div>
-                        <div class="cell mine"></div>
-                        <div class="cell">5</div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        <div class="cell" id="x0x0"></div>
+                        <div class="cell" id="x0x1"></div>
+                        <div class="cell" id="x0x2"></div>
+                        <div class="cell" id="x0x3"></div>
+                        <div class="cell" id="x0x4"></div>
+                        <div class="cell" id="x0x5"></div>
+                        <div class="cell" id="x0x6"></div>
+                        <div class="cell" id="x0x7"></div>
                     </div>
                     <div class="cells">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        <div class="cell" id="x1x0"></div>
+                        <div class="cell" id="x1x1"></div>
+                        <div class="cell" id="x1x2"></div>
+                        <div class="cell" id="x1x3"></div>
+                        <div class="cell" id="x1x4"></div>
+                        <div class="cell" id="x1x5"></div>
+                        <div class="cell" id="x1x6"></div>
+                        <div class="cell" id="x1x7"></div>
                     </div>
                     <div class="cells">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        <div class="cell" id="x2x0"></div>
+                        <div class="cell" id="x2x1"></div>
+                        <div class="cell" id="x2x2"></div>
+                        <div class="cell" id="x2x3"></div>
+                        <div class="cell" id="x2x4"></div>
+                        <div class="cell" id="x2x5"></div>
+                        <div class="cell" id="x2x6"></div>
+                        <div class="cell" id="x2x7"></div>
                     </div>
                     <div class="cells">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        <div class="cell" id="x3x0"></div>
+                        <div class="cell" id="x3x1"></div>
+                        <div class="cell" id="x3x2"></div>
+                        <div class="cell" id="x3x3"></div>
+                        <div class="cell" id="x3x4"></div>
+                        <div class="cell" id="x3x5"></div>
+                        <div class="cell" id="x3x6"></div>
+                        <div class="cell" id="x3x7"></div>
                     </div>
                     <div class="cells">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        <div class="cell" id="x4x0"></div>
+                        <div class="cell" id="x4x1"></div>
+                        <div class="cell" id="x4x2"></div>
+                        <div class="cell" id="x4x3"></div>
+                        <div class="cell" id="x4x4"></div>
+                        <div class="cell" id="x4x5"></div>
+                        <div class="cell" id="x4x6"></div>
+                        <div class="cell" id="x4x7"></div>
                     </div>
                     <div class="cells">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        <div class="cell" id="x5x0"></div>
+                        <div class="cell" id="x5x1"></div>
+                        <div class="cell" id="x5x2"></div>
+                        <div class="cell" id="x5x3"></div>
+                        <div class="cell" id="x5x4"></div>
+                        <div class="cell" id="x5x5"></div>
+                        <div class="cell" id="x5x6"></div>
+                        <div class="cell" id="x5x7"></div>
                     </div>
                     <div class="cells">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        <div class="cell" id="x6x0"></div>
+                        <div class="cell" id="x6x1"></div>
+                        <div class="cell" id="x6x2"></div>
+                        <div class="cell" id="x6x3"></div>
+                        <div class="cell" id="x6x4"></div>
+                        <div class="cell" id="x6x5"></div>
+                        <div class="cell" id="x6x6"></div>
+                        <div class="cell" id="x6x7"></div>
                     </div>
                     <div class="cells">
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
-                        <div class="cell"></div>
+                        <div class="cell" id="x7x0"></div>
+                        <div class="cell" id="x7x1"></div>
+                        <div class="cell" id="x7x2"></div>
+                        <div class="cell" id="x7x3"></div>
+                        <div class="cell" id="x7x4"></div>
+                        <div class="cell" id="x7x5"></div>
+                        <div class="cell" id="x7x6"></div>
+                        <div class="cell" id="x7x7"></div>
                     </div>
                 </div>
                 <div class="buttonBox">
                     <button class="gameBTN" onclick="aiMove()">AI Move</button><br>
                     <button class="gameBTN" onclick="resetGame()">Reset</button>
+                    <div class="message">
+                    </div>
                 </div>
               </div>
             </div>

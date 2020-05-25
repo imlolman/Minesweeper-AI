@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.gameBox * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .gameBox .rules {
   padding: 50px;
   font-size: 25px;
@@ -44,6 +51,7 @@
 .gameBox.withGame .sweeperBox .cells {
   height: 50px;
   margin-top: 2px;
+  margin-left: 1px;
 }
 
 .gameBox.withGame .sweeperBox .cells .cell {
@@ -89,6 +97,18 @@
 .gameBox.withGame .buttonBox .gameBTN {
   width: 100%;
   margin-left: 15px;
+}
+
+.gameBox.withGame .buttonBox .message {
+  position: unset;
+  text-align: center;
+  display: block;
+  font-size: 30px;
+  width: 100%;
+  font-weight: 600;
+  margin-top: 80px;
+  margin-left: 15px;
+  height: 48px;
 }
 
 .gameBox.withoutGame {

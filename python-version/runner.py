@@ -191,7 +191,7 @@ while True:
             else:
                 print("AI making safe move.")
             # Added Code to Update Flags in RealTime
-            for ai_mine in ai.give_all_mines():
+            for ai_mine in ai.getFlags():
                 flags.add(ai_mine)
             time.sleep(0.2)
 
