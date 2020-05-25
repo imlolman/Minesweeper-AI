@@ -220,6 +220,7 @@ class MineSweeperAI{
         while(this.minify_knowledgebase() != this.knowledge){
             continue
         }
+
         
     
         // console.log("Move: ",cell)
@@ -585,7 +586,7 @@ Array.prototype.delete = function (elem) {
 function runOnLoad() {
     if(window.innerWidth < 700){
         var mvp = document.getElementById('myViewport');
-        mvp.setAttribute('content','width=700');
+        mvp.setAttribute('content','width=700 user-scalable=0');
     }
 
     document.addEventListener('contextmenu', event => event.preventDefault());
