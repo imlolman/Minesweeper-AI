@@ -583,6 +583,11 @@ Array.prototype.delete = function (elem) {
 
 // Removing Right Click to call a function
 function runOnLoad() {
+    if(window.innerWidth < 700){
+        var mvp = document.getElementById('myViewport');
+        mvp.setAttribute('content','width=700');
+    }
+
     document.addEventListener('contextmenu', event => event.preventDefault());
 
     for(var i of range(HEIGHT)){
