@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta property="og:image" content="https://repository-images.githubusercontent.com/266476387/f4c9f280-9dad-11ea-8052-c754f52140c7" />
-    <meta name="viewport" id="myViewport" content="width=device-width">
+    <meta charset="UTF-8" /><!--Just charset-->
+    <meta name="language" content="English"><!--for language-->
+    <meta name="viewport" id="myViewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><!--for viewport-->
+    <meta name="description" content="Minesweeper | CS50’s Intro to AI with Python Submission"><!--for description of website | upto 160 characters only-->
+    <meta name="keywords" content="Minesweeper CS50’s Intro to AI with Python Submission"><!--for keywords-->
+    <meta name="theme-color" content="#e84118" /><!--for android chrome topbar theme-->
+    <link rel="shortcut icon" href="assets/images/favicon-128.png"><!--fevicon -->
+    <meta property="og:type" content="website" /><!--for telling about website-->
+    <meta property="og:title" content="Minesweeper AI" /><!--for fb title-->
+    <meta property="og:description" content="Minesweeper | CS50’s Intro to AI with Python Submission" /><!--for fb description-->
+    <meta property="og:image" content="https://imlolman.github.io/Minesweeper-AI/" /><!--for fb image-->
+    <meta property="og:url" content="https://imlolman.github.io/Minesweeper-AI/" /><!--for fb permanent URL-->
+    <meta property="og:site_name" content="Minesweeper AI" /><!--for overall company name-->
+    <meta property="fb:app_id" content="620425188558211" />
+    <link rel="canonical" href="https://imlolman.github.io/Minesweeper-AI/" /><!--for fixed current page url-->
+    <meta name="twitter:title" content="Minesweeper AI"><!--for twitter title-->
+    <meta name="twitter:description" content="Minesweeper | CS50’s Intro to AI with Python Submission"><!--for twitter description-->
+    <meta name="twitter:image" content="https://imlolman.github.io/Minesweeper-AI/"><!--for twitter image-->
+    <meta name="twitter:creator" content="@satyam755755"><!--twitter username-->
+    <meta name="robots" content="index, follow"><!--for google crawling-->
     <title>Minesweeper AI</title>
     <style>
         :root{
-            --color:265, 57%; /*the base color format(HSL) https://www.google.com/search?q=rgb+to+hex&oq=rgb+to+hex&aqs=chrome..69i57j0l6j69i60.3817j0j7&sourceid=chrome&ie=UTF-8 */
-            --l:57%; /*the initial lightness*/
-            --color-primary: hsl(var(--color),var(--l));
-            --color-primary-darker: hsl(var(--color),calc(var(--l) + 5%));
-            --color-primary-darkest: hsl(var(--color),calc(var(--l) + 10%));
+            --color: #e84118;/*the initial lightness*/
+            --color-primary: #e84118;
+            --color-primary-darker: #c23616;
+            --color-primary-darkest: #c23616;
         }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
     <script src="https://imlolman.github.io/js/controller.js"></script>
     <link rel="stylesheet" href="assets/css/milligram.min.css">
     <link href="assets/css/fa/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custom.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-    </script>
+    <link rel="manifest" href="manifest.json">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script> <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+</script>
+
 </head>
 <body>
     <main class="wrapper">
         <nav class="navigation nav-top">
             <section class="container">
                 <a class="navigation-title" href="/">
-                    <i class="img fas fa-cannabis"></i>
+                    <i class="img fas fa-qrcode"></i>
                     &nbsp;
                     <h1 class="title">Minesweeper AI</h1>
                 </a>
@@ -54,107 +71,106 @@
         <section class="container">
             <h3>Minesweeper AI 🥰</h3><br>
             <div class="row centerthisbox">
-              <div class="gameBox withoutGame">
-                <h1>Play Minesweeper</h1>
-                <div class="rules">
-                    <div>Click a Cell to reveal it.</div>
-                    <div>Right-click a cell to mark it as mine.</div>
-                    <div>Mark all mines successfully to win.</div>
+                <div class="gameBox withoutGame">
+                  <h1>Play Minesweeper</h1>
+                  <div class="rules">
+                      <div>Click a Cell to reveal it.</div>
+                      <div>Right-click a cell to mark it as mine.</div>
+                      <div>Mark all mines successfully to win.</div>
+                  </div>
+                  <button class="gameBTN" onclick="runGame()">Play Game</button>
                 </div>
-                <button class="gameBTN" onclick="runGame()">Play Game</button>
+                <div class="gameBox withGame">
+                  <div class="sweeperBox">
+                      <div class="cells">
+                          <div class="cell" id="x0x0"></div>
+                          <div class="cell" id="x0x1"></div>
+                          <div class="cell" id="x0x2"></div>
+                          <div class="cell" id="x0x3"></div>
+                          <div class="cell" id="x0x4"></div>
+                          <div class="cell" id="x0x5"></div>
+                          <div class="cell" id="x0x6"></div>
+                          <div class="cell" id="x0x7"></div>
+                      </div>
+                      <div class="cells">
+                          <div class="cell" id="x1x0"></div>
+                          <div class="cell" id="x1x1"></div>
+                          <div class="cell" id="x1x2"></div>
+                          <div class="cell" id="x1x3"></div>
+                          <div class="cell" id="x1x4"></div>
+                          <div class="cell" id="x1x5"></div>
+                          <div class="cell" id="x1x6"></div>
+                          <div class="cell" id="x1x7"></div>
+                      </div>
+                      <div class="cells">
+                          <div class="cell" id="x2x0"></div>
+                          <div class="cell" id="x2x1"></div>
+                          <div class="cell" id="x2x2"></div>
+                          <div class="cell" id="x2x3"></div>
+                          <div class="cell" id="x2x4"></div>
+                          <div class="cell" id="x2x5"></div>
+                          <div class="cell" id="x2x6"></div>
+                          <div class="cell" id="x2x7"></div>
+                      </div>
+                      <div class="cells">
+                          <div class="cell" id="x3x0"></div>
+                          <div class="cell" id="x3x1"></div>
+                          <div class="cell" id="x3x2"></div>
+                          <div class="cell" id="x3x3"></div>
+                          <div class="cell" id="x3x4"></div>
+                          <div class="cell" id="x3x5"></div>
+                          <div class="cell" id="x3x6"></div>
+                          <div class="cell" id="x3x7"></div>
+                      </div>
+                      <div class="cells">
+                          <div class="cell" id="x4x0"></div>
+                          <div class="cell" id="x4x1"></div>
+                          <div class="cell" id="x4x2"></div>
+                          <div class="cell" id="x4x3"></div>
+                          <div class="cell" id="x4x4"></div>
+                          <div class="cell" id="x4x5"></div>
+                          <div class="cell" id="x4x6"></div>
+                          <div class="cell" id="x4x7"></div>
+                      </div>
+                      <div class="cells">
+                          <div class="cell" id="x5x0"></div>
+                          <div class="cell" id="x5x1"></div>
+                          <div class="cell" id="x5x2"></div>
+                          <div class="cell" id="x5x3"></div>
+                          <div class="cell" id="x5x4"></div>
+                          <div class="cell" id="x5x5"></div>
+                          <div class="cell" id="x5x6"></div>
+                          <div class="cell" id="x5x7"></div>
+                      </div>
+                      <div class="cells">
+                          <div class="cell" id="x6x0"></div>
+                          <div class="cell" id="x6x1"></div>
+                          <div class="cell" id="x6x2"></div>
+                          <div class="cell" id="x6x3"></div>
+                          <div class="cell" id="x6x4"></div>
+                          <div class="cell" id="x6x5"></div>
+                          <div class="cell" id="x6x6"></div>
+                          <div class="cell" id="x6x7"></div>
+                      </div>
+                      <div class="cells">
+                          <div class="cell" id="x7x0"></div>
+                          <div class="cell" id="x7x1"></div>
+                          <div class="cell" id="x7x2"></div>
+                          <div class="cell" id="x7x3"></div>
+                          <div class="cell" id="x7x4"></div>
+                          <div class="cell" id="x7x5"></div>
+                          <div class="cell" id="x7x6"></div>
+                          <div class="cell" id="x7x7"></div>
+                      </div>
+                  </div>
+                  <div class="buttonBox">
+                      <button class="gameBTN" onclick="aiMove()">AI Move</button><br>
+                      <button class="gameBTN" onclick="resetGame()">Reset</button>
+                      <div class="message">
+                      </div>
+                  </div>
+                </div>
               </div>
-              <div class="gameBox withGame">
-                <div class="sweeperBox">
-                    <div class="cells">
-                        <div class="cell" id="x0x0"></div>
-                        <div class="cell" id="x0x1"></div>
-                        <div class="cell" id="x0x2"></div>
-                        <div class="cell" id="x0x3"></div>
-                        <div class="cell" id="x0x4"></div>
-                        <div class="cell" id="x0x5"></div>
-                        <div class="cell" id="x0x6"></div>
-                        <div class="cell" id="x0x7"></div>
-                    </div>
-                    <div class="cells">
-                        <div class="cell" id="x1x0"></div>
-                        <div class="cell" id="x1x1"></div>
-                        <div class="cell" id="x1x2"></div>
-                        <div class="cell" id="x1x3"></div>
-                        <div class="cell" id="x1x4"></div>
-                        <div class="cell" id="x1x5"></div>
-                        <div class="cell" id="x1x6"></div>
-                        <div class="cell" id="x1x7"></div>
-                    </div>
-                    <div class="cells">
-                        <div class="cell" id="x2x0"></div>
-                        <div class="cell" id="x2x1"></div>
-                        <div class="cell" id="x2x2"></div>
-                        <div class="cell" id="x2x3"></div>
-                        <div class="cell" id="x2x4"></div>
-                        <div class="cell" id="x2x5"></div>
-                        <div class="cell" id="x2x6"></div>
-                        <div class="cell" id="x2x7"></div>
-                    </div>
-                    <div class="cells">
-                        <div class="cell" id="x3x0"></div>
-                        <div class="cell" id="x3x1"></div>
-                        <div class="cell" id="x3x2"></div>
-                        <div class="cell" id="x3x3"></div>
-                        <div class="cell" id="x3x4"></div>
-                        <div class="cell" id="x3x5"></div>
-                        <div class="cell" id="x3x6"></div>
-                        <div class="cell" id="x3x7"></div>
-                    </div>
-                    <div class="cells">
-                        <div class="cell" id="x4x0"></div>
-                        <div class="cell" id="x4x1"></div>
-                        <div class="cell" id="x4x2"></div>
-                        <div class="cell" id="x4x3"></div>
-                        <div class="cell" id="x4x4"></div>
-                        <div class="cell" id="x4x5"></div>
-                        <div class="cell" id="x4x6"></div>
-                        <div class="cell" id="x4x7"></div>
-                    </div>
-                    <div class="cells">
-                        <div class="cell" id="x5x0"></div>
-                        <div class="cell" id="x5x1"></div>
-                        <div class="cell" id="x5x2"></div>
-                        <div class="cell" id="x5x3"></div>
-                        <div class="cell" id="x5x4"></div>
-                        <div class="cell" id="x5x5"></div>
-                        <div class="cell" id="x5x6"></div>
-                        <div class="cell" id="x5x7"></div>
-                    </div>
-                    <div class="cells">
-                        <div class="cell" id="x6x0"></div>
-                        <div class="cell" id="x6x1"></div>
-                        <div class="cell" id="x6x2"></div>
-                        <div class="cell" id="x6x3"></div>
-                        <div class="cell" id="x6x4"></div>
-                        <div class="cell" id="x6x5"></div>
-                        <div class="cell" id="x6x6"></div>
-                        <div class="cell" id="x6x7"></div>
-                    </div>
-                    <div class="cells">
-                        <div class="cell" id="x7x0"></div>
-                        <div class="cell" id="x7x1"></div>
-                        <div class="cell" id="x7x2"></div>
-                        <div class="cell" id="x7x3"></div>
-                        <div class="cell" id="x7x4"></div>
-                        <div class="cell" id="x7x5"></div>
-                        <div class="cell" id="x7x6"></div>
-                        <div class="cell" id="x7x7"></div>
-                    </div>
-                </div>
-                <div class="buttonBox">
-                    <button class="gameBTN" onclick="aiMove()">AI Move</button><br>
-                    <button class="gameBTN" onclick="resetGame()">Reset</button>
-                    <div class="message">
-                    </div>
-                </div>
-              </div>
-            </div>
-          
         </section>
         <footer class="footer">
             <section class="container">
@@ -164,5 +180,22 @@
     </main>
 </body>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/extend.js"></script>
     <script src="assets/js/sketch.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('./sw.js', { scope: './' })
+          .then(() => {
+              console.info('Service Worker Registered');
+          }, err => console.error("Service Worker registration failed: ", err));
+
+      navigator.serviceWorker
+          .ready
+          .then(() => {
+              console.info('Service Worker Ready');
+          });
+  }
+  </script>
+
 </html>
